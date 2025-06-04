@@ -30,7 +30,7 @@ An end-to-end medical Q\&A chatbot that combines BioBERT embeddings with a custo
 ```mermaid
 graph TD
     A[Patient Query] --> B[BioBERT Encoder]
-    B --> C[Transformer Decoder (Multi-layer)]
+    B --> C[Transformer Decoder - Multi-layer]
     C --> D[Token Prediction Layer]
     D --> E[Generated Medical Response]
 ```
