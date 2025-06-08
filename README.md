@@ -61,14 +61,11 @@ graph TD
 
 ## 🧪 Usage
 
-1. Clone the repository:
+1. Download the compressed project folder from this link:
 
-```bash
-git clone https://github.com/your-username/medical-chatbot-transformer.git
-cd medical-chatbot-transformer
-```
+'https://drive.google.com/file/d/1uZiGAX3XCpnjJnEhwmu1Ds8il0dmEbAt/view?usp=sharing'
 
-2. Install dependencies:
+2. Install dependencies
 
 3. Launch Streamlit app (Beam/Nucleus):
 
@@ -91,4 +88,4 @@ streamlit run streamlit_nucleus.py
 
 ## ⚠️ Disclaimer
 
-This tool is intended for **research and educational purposes only**. It is not a substitute for professional medical advice, diagnosis, or treatment.
+This tool is intended for **research and educational purposes only**. It is not a substitute for professional medical advice, diagnosis, or treatment. Note that the model was trained on my personal laptop taking weeks, hence the paramters are limited which shows in the response capabilities.
