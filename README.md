@@ -89,10 +89,10 @@ Open [http://localhost:8501](http://localhost:8501) in your browser.
 
 ```mermaid
 graph TD
-    A[User Query] --> B[BioBERT Encoder]
-    B --> C[Transformer Decoder (Multi-layer)]
-    C --> D[Linear + Softmax]
-    D --> E[Generated Response]
+    A(User Query) --> B[BioBERT Encoder]
+    B --> C["Transformer Decoder (Multi-layer)"]
+    C --> D["Linear + Softmax"]
+    D --> E(Generated Response)
 ```
 
 * Encoder: `dmis-lab/biobert-base-cased-v1.1`
