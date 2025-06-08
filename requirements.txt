@@ -20,3 +20,5 @@ protobuf<4.0.0  # Streamlit compatibility
 
 # Optional, but good for production
 sentencepiece  # If using any tokenizer that needs it (not needed for BERT)
+
+requests
