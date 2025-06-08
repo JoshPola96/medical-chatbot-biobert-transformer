@@ -22,3 +22,5 @@ protobuf<4.0.0  # Streamlit compatibility
 sentencepiece  # If using any tokenizer that needs it (not needed for BERT)
 
 requests
+
+gdown
