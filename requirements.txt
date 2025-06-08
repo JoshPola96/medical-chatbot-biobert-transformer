@@ -1,0 +1,22 @@
+# Streamlit UI
+streamlit==1.34.0
+
+# Core ML
+torch>=2.0.0
+transformers>=4.36.0
+scikit-learn
+
+# Data processing
+pandas
+numpy
+tqdm
+
+# Optimizers & Scheduling
+# OneCycleLR is in torch >=1.1, no extra needed
+
+# Logging and utilities
+requests
+protobuf<4.0.0  # Streamlit compatibility
+
+# Optional, but good for production
+sentencepiece  # If using any tokenizer that needs it (not needed for BERT)
