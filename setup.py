@@ -1,39 +1,49 @@
-import requests
-import zipfile
-import os
+import requests, zipfile, os, shutil
 
 def download_file_from_google_drive(file_id, destination):
-    def get_confirm_token(response):
-        for key, value in response.cookies.items():
-            if key.startswith('download_warning'):
-                return value
-        return None
-
-    def save_response_content(response, destination):
-        CHUNK_SIZE = 32768
-        with open(destination, "wb") as f:
-            for chunk in response.iter_content(CHUNK_SIZE):
-                if chunk:  # filter out keep-alive chunks
-                    f.write(chunk)
-
     URL = "https://docs.google.com/uc?export=download"
-
     session = requests.Session()
     response = session.get(URL, params={'id': file_id}, stream=True)
-    token = get_confirm_token(response)
+
+    # handle large files
+    token = None
+    for key, value in response.cookies.items():
+        if key.startswith('download_warning'):
+            token = value
+            break
 
     if token:
-        params = {'id': file_id, 'confirm': token}
-        response = session.get(URL, params=params, stream=True)
+        response = session.get(URL, params={'id': file_id, 'confirm': token}, stream=True)
 
-    save_response_content(response, destination)
+    with open(destination, "wb") as f:
+        for chunk in response.iter_content(32768):
+            if chunk:
+                f.write(chunk)
 
-# Example usage
-file_id = "1uZiGAX3XCpnjJnEhwmu1Ds8il0dmEbAt"
-zip_path = "model.zip"
+    print("✅ Download complete.")
 
-download_file_from_google_drive(file_id, zip_path)
+def extract_and_move(zip_path):
+    extract_to = "."
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(extract_to)
+    print("✅ Extraction complete.")
 
-# Unzip safely
-with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-    zip_ref.extractall("model")
+    # Move the model folder to root if needed
+    src = os.path.join("Chatbot_Medical_Advice", "final_model")
+    dst = "final_model"
+    if os.path.exists(dst):
+        shutil.rmtree(dst)
+    shutil.move(src, dst)
+    print("✅ Moved final_model to root.")
+
+if __name__ == "__main__":
+    FILE_ID = "1uZiGAX3XCpnjJnEhwmu1Ds8il0dmEbAt"
+    ZIP_NAME = "Chatbot_Medical_Advice.zip"
+
+    print("⬇️ Downloading model from Google Drive...")
+    download_file_from_google_drive(FILE_ID, ZIP_NAME)
+
+    print("📦 Extracting model...")
+    extract_and_move(ZIP_NAME)
+
+    os.remove(ZIP_NAME)
