@@ -12,7 +12,7 @@
 > approach and the decisions behind it, not a guaranteed-green build.
 > Happy to bring it current if that would be useful — just ask.
 
-A research-grade medical Q&A chatbot combining [BioBERT](https://arxiv.org/abs/1901.08746) embeddings with a custom multi-layer Transformer decoder. Built from scratch in PyTorch and deployed via an interactive Streamlit interface supporting both **Nucleus Sampling** and **Beam Search**.
+A research-grade medical Q&A chatbot combining [BioBERT](https://arxiv.org/abs/1901.08746) embeddings with a custom multi-layer Transformer decoder. Built from scratch in PyTorch, with a local Streamlit interface supporting both **Nucleus Sampling** and **Beam Search**.
 
 ---
 
