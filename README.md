@@ -1,6 +1,6 @@
 # 🏥 Medical AI Chatbot with BioBERT + Transformer Decoder
 
-> **Scope** · Research and self-study project — published as-is.
+> **Scope** · Personal project, built on my own time. Not actively maintained — it is finished, not tended.
 >
 > **Committed on purpose:** `chatbot.log` is a real training and inference log, kept so behaviour is inspectable without rerunning a three-week training job. Weights are distributed separately via `setup.py`.
 
