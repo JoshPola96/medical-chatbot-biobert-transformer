@@ -4,6 +4,14 @@
 >
 > **Committed on purpose:** `chatbot.log` is a real training and inference log, kept so behaviour is inspectable without rerunning a three-week training job. Weights are distributed separately via `setup.py`.
 
+> [!NOTE]
+> **Built 2025. The ecosystem has moved since.**
+> Dependencies here are unpinned, so a clean `pip install` today resolves to
+> versions that did not exist when this was written and pandas 3.0, numpy 2.5 plus major releases of torch, ultralytics and transformers have all landed since. Expect install or
+> runtime breakage on a fresh environment. What is on offer is the engineering
+> approach and the decisions behind it, not a guaranteed-green build.
+> Happy to bring it current if that would be useful — just ask.
+
 A research-grade medical Q&A chatbot combining [BioBERT](https://arxiv.org/abs/1901.08746) embeddings with a custom multi-layer Transformer decoder. Built from scratch in PyTorch and deployed via an interactive Streamlit interface supporting both **Nucleus Sampling** and **Beam Search**.
 
 ---
