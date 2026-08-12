@@ -1,5 +1,9 @@
 # 🏥 Medical AI Chatbot with BioBERT + Transformer Decoder
 
+> **Scope** · Research and self-study project — published as-is.
+>
+> **Committed on purpose:** `chatbot.log` is a real training and inference log, kept so behaviour is inspectable without rerunning a three-week training job. Weights are distributed separately via `setup.py`.
+
 A research-grade medical Q&A chatbot combining [BioBERT](https://arxiv.org/abs/1901.08746) embeddings with a custom multi-layer Transformer decoder. Built from scratch in PyTorch and deployed via an interactive Streamlit interface supporting both **Nucleus Sampling** and **Beam Search**.
 
 ---
