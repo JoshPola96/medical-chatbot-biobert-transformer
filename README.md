@@ -16,11 +16,11 @@ A research-grade medical Q&A chatbot combining [BioBERT](https://arxiv.org/abs/1
 
 ---
 
-## 🚀 Live Demo (Optional)
+## Running it
 
-> **NOTE:** Due to memory constraints on Render's free tier, the live demo is currently unavailable.  
->  
-> ✅ You can run this locally in under 5 minutes — model weights are auto-downloaded via `setup.py`.
+Runs locally in a few minutes - model weights download automatically via
+`setup.py`. There is no hosted demo; the model does not fit in free-tier memory,
+and a link that dies quietly is worse than no link.
 
 ---
 
